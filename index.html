@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tehelka 007 - Trusted Platform</title>
 
-    <!-- Meta Pixel Code (Standard PageView Only) -->
+    <!-- Meta Pixel Code -->
     <script>
     !function(f,b,e,v,n,t,s)
     {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -13,68 +13,101 @@
     if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
     n.queue=[];t=b.createElement(e);t.async=!0;
     t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}window,document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js';
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    
     fbq('init', '1696674527993587');
     fbq('track', 'PageView');
     </script>
     <noscript>
-    <img height="1" width="1" style="display:none" 
-         src="https://www.facebook.com/tr?id=1696674527993587&v=news&ev=PageView"/>
+    <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1696674527993587&ev=PageView&noscript=1"/>
     </noscript>
     <!-- End Meta Pixel Code -->
 
     <style>
         body {
+            margin: 0;
+            padding: 0;
             font-family: 'Arial', sans-serif;
-            background: radial-gradient(circle, #1a002c 0%, #05000a 100%);
-            color: #fff;
+            background: #0a0a0a;
+            color: #ffffff;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             min-height: 100vh;
-            margin: 0;
             text-align: center;
         }
 
         .fast-badge {
-            background: linear-gradient(90deg, #ffcc00, #ff6600);
+            background: #ffcc00;
             color: #000;
-            font-weight: bold;
-            padding: 5px 15px;
+            font-weight: 800;
+            padding: 8px 20px;
             border-radius: 50px;
             margin-bottom: 20px;
-            font-size: 0.9rem;
+            text-transform: uppercase;
         }
 
-        @keyframes blink { 0% { opacity: 1; } 50% { opacity: 0.5; } 100% { opacity: 1; } }
+        /* Headline Blinking Animation */
+        @keyframes blink { 
+            0%, 100% { opacity: 1; } 
+            50% { opacity: 0.3; } 
+        }
         .headline {
             font-size: 3.5rem;
             font-weight: 900;
-            color: #ff0055;
+            color: #ff0044;
             animation: blink 1s infinite;
-            margin-bottom: 5px;
+            margin: 10px 0;
         }
 
-        .offer-box {
+        .offer-section {
             border: 2px dashed #00ffcc;
             padding: 20px;
-            border-radius: 10px;
             margin: 30px 0;
+            border-radius: 15px;
+            width: 80%;
+            max-width: 400px;
         }
 
-        .whatsapp-btn {
-            background-color: #25D366;
-            color: white;
-            text-decoration: none;
+        /* Button Zooming & Blinking Animation */
+        @keyframes buttonBlinkPulse {
+            0%, 100% {
+                transform: scale(1);
+                opacity: 1;
+                box-shadow: 0 0 15px rgba(37, 211, 102, 0.6);
+            }
+            50% {
+                transform: scale(1.08);
+                opacity: 0.4; /* Yahan se button blink aur fade hoga */
+                box-shadow: 0 0 30px rgba(37, 211, 102, 1);
+            }
+        }
+
+        .btn {
+            background: #25d366;
+            color: #fff;
             padding: 20px 40px;
             font-size: 1.5rem;
             font-weight: bold;
+            text-decoration: none;
             border-radius: 50px;
-            transition: 0.3s;
+            display: inline-block;
+            text-transform: uppercase;
+            /* Animation applied here */
+            animation: buttonBlinkPulse 1.2s infinite ease-in-out; 
+            transition: 0.2s;
         }
-        .whatsapp-btn:hover { background-color: #128C7E; }
+
+        /* Hover karne par animation stop ho jayegi taaki click karne me dikkat na ho */
+        .btn:hover { 
+            animation: none;
+            transform: scale(1.1); 
+            background: #128c7e; 
+            opacity: 1;
+            box-shadow: 0 0 25px #25d366;
+        }
     </style>
 </head>
 <body>
@@ -82,16 +115,15 @@
     <div class="fast-badge">⚡ 100% SUPER FAST SITE</div>
     
     <div class="headline">Tehelka 007</div>
-    <div style="font-size: 1.2rem; margin-bottom: 20px;">BEST PLATFORM TRUSTED SITE</div>
+    <div style="font-size: 1.2rem; color: #ccc;">BEST PLATFORM TRUSTED SITE</div>
 
-    <div class="offer-box">
-        <div style="color: #ffcc00; font-size: 1.4rem; font-weight: bold;">SPECIAL OFFER: 100% WELCOME BONUS!</div>
+    <div class="offer-section">
+        <div style="color: #ffcc00; font-size: 1.5rem; font-weight: bold;">SPECIAL OFFER!</div>
+        <div style="font-size: 1.2rem;">Get 100% Welcome Bonus</div>
     </div>
 
-    <!-- Button bina kisi tracking event ke -->
-    <a href="https://wa.link/wrx2r5" class="whatsapp-btn" target="_blank">
-        GET ID ON WHATSAPP
-    </a>
+    <!-- Blinking WhatsApp Button (No tracking events on click) -->
+    <a href="https://wa.link/wrx2r5" class="btn" target="_blank">JOIN ON WHATSAPP</a>
 
 </body>
 </html>
